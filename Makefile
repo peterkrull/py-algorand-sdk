@@ -1,4 +1,5 @@
 unit:
+	python3 test_unit.py
 	behave --tags="@unit.offline or @unit.algod or @unit.indexer or @unit.rekey" test -f progress2
 
 integration:
