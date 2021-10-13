@@ -13,9 +13,8 @@ jobs:
             pip install -r requirements.txt
             black --check .
             set -e
-            if [ -n "$DOCKER_PASSWORD" ]; then echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin ; fi
             python3 test_unit.py
             make docker-test
-          no_output_timeout: 30m
+          no_output_timeout: 40m
       - store_test_results:
           path: test-results
