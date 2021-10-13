@@ -7,6 +7,7 @@ jobs:
       - checkout
       - run:
           command: |
+            pip install -r requirements.txt
             black --check .
             set -e
             if [ -n "$DOCKER_PASSWORD" ]; then echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin ; fi
