@@ -7,6 +7,7 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: 19.03.13
+          docker_layer_caching: true
       - run:
           command: |
             pip install -r requirements.txt
@@ -15,6 +16,6 @@ jobs:
             if [ -n "$DOCKER_PASSWORD" ]; then echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin ; fi
             python3 test_unit.py
             make docker-test
-          no_output_timeout: 20m
+          no_output_timeout: 30m
       - store_test_results:
           path: test-results
