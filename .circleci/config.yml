@@ -15,6 +15,4 @@ jobs:
             set -e
             python3 test_unit.py
             make docker-test
-          no_output_timeout: 40m
-      - store_test_results:
-          path: test-results
+          no_output_timeout: 20m
