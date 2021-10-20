@@ -9,7 +9,7 @@ import warnings
 
 word_to_index = {}
 index_to_word = {}
-for i, word in enumerate(wordlist.word_list_raw().split("\n")):
+for i, word in enumerate(wordlist.word_list()):
     index_to_word[i] = word
     # Put all prefixes of words at least four letters long into map,
     # since they are guarenteed unique, so some people may only save

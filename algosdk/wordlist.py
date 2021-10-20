@@ -2052,3 +2052,12 @@ zero
 zone
 zoo
 """
+
+def word_list():
+    """
+    Return the wordlist used for mnemonics as a list.
+
+    Returns:
+        str[]: List of words
+    """
+    return word_list_raw().split("\n")[:-1]
